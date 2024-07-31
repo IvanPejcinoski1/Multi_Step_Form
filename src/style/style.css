@@ -1,0 +1,342 @@
+:root {
+  --marine-blue: #142b52;
+  --purplish-blue: #6a5acd;
+  --pastel-blue: #c7dffc;
+  --light-blue: #daf4fd;
+  --strawberry-red: #f85a79;
+
+  --cool-gray: #9aa0a6;
+  --light-gray: #dfe3e9;
+  --magnolia: #f8f8ff;
+  --alabaster: #fefeff;
+  --white: #ffffff;
+
+  --BG: #eff5ff;
+  --BorderColor: #d6d9e6;
+  --Denim: #022959;
+  --Grey: #9699aa;
+  --LightBlue: #abbcff;
+  --LightGrey: #d6d9e6;
+  --Orange: #ffaf7e;
+  --Pink: #f9818e;
+  --Purple: #483eff;
+  --RedErrors: #ee374a;
+  --SkyBlue: #bee2fd;
+  --VeryLightGrey: #f8f9ff;
+  --White: #ffffff;
+
+  --font-size-heading: 32px;
+  --font-size-body-l: 16px;
+  --font-size-body-m: 14px;
+  --font-size-body-s: 12px;
+}
+
+.backgroundContainer {
+  height: 100vh;
+  background-color: var(--BG);
+}
+.formRow {
+  border-radius: 15px;
+  width: 940px;
+  height: 600px;
+}
+.header {
+  font-weight: bold;
+  font-size: var(--font-size-heading);
+  color: var(--Denim);
+}
+.subheader {
+  font-size: (var(--font-size-body-l));
+  color: var(--Grey);
+}
+.nextButton {
+  background-color: var(--marine-blue);
+  width: 123px;
+  height: 48px;
+  border: none;
+  outline: none;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 20px;
+  right: 48px;
+}
+.mainImage {
+  background-image: url("../../public/images/Oval.png");
+  background-repeat: no-repeat;
+}
+.circleDiv {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  border: 2px solid white;
+  color: white;
+  padding-top: 2px;
+}
+.stepNumberparagraph {
+  color: var(--LightGrey);
+}
+.basicInfoInput::placeholder {
+  color: var(--Grey);
+}
+
+.required {
+  color: var(--RedErrors);
+  font-size: var(--font-size-body-m);
+}
+
+.activeStep {
+  background-color: var(--light-blue);
+  border: 2px solid var(--light-blue);
+  color: black;
+}
+/* select your plan */
+
+.planOption {
+  height: 183px;
+
+  border: 2px solid var(--LightGrey);
+  border-radius: 15px;
+}
+.planOption:hover {
+  cursor: pointer;
+}
+.activePlanOption {
+  background-color: var(--VeryLightGrey);
+  border: 2px solid var(--purplish-blue);
+}
+.planOption img {
+  height: 40px;
+  width: 40px;
+  top: 10px;
+  left: 10px;
+  position: relative;
+}
+.planOption p {
+  font-size: var(--font-size-body-l);
+  color: var(--Denim);
+  margin-top: 50px;
+  margin-left: 10px;
+}
+.planOption span:first-of-type {
+  color: var(--cool-gray);
+}
+
+.planOption span {
+  margin-left: 10px;
+  font-size: var(--font-size-body-m);
+}
+
+.toggleContainer {
+  background-color: var(--VeryLightGrey);
+  text-align: center;
+  margin-top: 25px;
+  padding: 10px 0px;
+}
+.toggler {
+  color: var(--Grey);
+}
+.free {
+  color: var(--Denim);
+}
+.activePlan {
+  color: var(--Denim);
+}
+/* toggle button */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider {
+  background-color: var(--Denim);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.backButton {
+  position: absolute;
+  bottom: 20px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: var(--font-size-body-l);
+  color: var(--cool-gray);
+}
+
+/* addOns */
+
+.addOns {
+  border: 2px solid var(--BorderColor);
+  border-radius: 15px;
+  padding: 8px 0px;
+}
+.addOns input {
+  height: 20px;
+  width: 20px;
+}
+.addOns div p {
+  color: var(--Denim);
+  font-weight: 500;
+}
+.addOns div span:first-of-type {
+  color: var(--cool-gray);
+}
+.addOns span:last-of-type {
+  color: var(--purplish-blue);
+}
+.activeAddons {
+  background-color: var(--VeryLightGrey);
+  border: 2px solid var(--purplish-blue);
+}
+/* summary */
+
+.summary {
+  background-color: var(--VeryLightGrey);
+}
+
+.summary hr {
+  height: 3px;
+  border: none;
+  background-color: var(--cool-gray);
+}
+.link,
+.addOnsParagraph {
+  color: var(--Grey);
+}
+.addOnsParagraph span {
+  color: var(--Denim);
+}
+
+.summary div p:nth-child(2) {
+  color: var(--Denim);
+  font-weight: 500;
+}
+.total {
+  color: var(--Grey);
+  position: relative;
+}
+.total span {
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--purplish-blue);
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#confirm {
+  background-color: var(--purplish-blue);
+}
+
+/* submited  */
+#OKimage {
+  width: 80px;
+  height: 80px;
+  padding: 0px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 425px) {
+  .mainImage {
+    width: 100% !important;
+    background-size: cover;
+    background-position: center 90%;
+    background-repeat: no-repeat;
+    height: 172px;
+  }
+  .childrenContent {
+    position: absolute;
+    top: 172px;
+    background-color: var(--light-blue);
+    height: fit-content;
+    padding-bottom: 50px;
+  }
+  .innerContent {
+    padding-top: 30px;
+    background-color: var(--white);
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    margin-top: -50px;
+  }
+
+  .formRow {
+    border-radius: none !important;
+    padding: 0px !important;
+    height: 100%;
+  }
+  .stepInfo {
+    display: none;
+  }
+  .nextButton {
+    bottom: -70px;
+    right: 16px;
+  }
+  .backButton {
+    bottom: -70px;
+    left: 32px;
+  }
+  .planOption p,
+  .planOption span {
+    margin: 0px;
+  }
+  .planOption img {
+    top: 0px;
+  }
+  .addOnsDescription {
+    font-size: var(--font-size-body-s);
+  }
+}

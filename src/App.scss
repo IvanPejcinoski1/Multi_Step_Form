@@ -1,0 +1,348 @@
+$marine-blue: #142b52;
+$purplish-blue: #6a5acd;
+$pastel-blue: #c7dffc;
+$light-blue: #daf4fd;
+$strawberry-red: #f85a79;
+
+$cool-gray: #9aa0a6;
+$light-gray: #dfe3e9;
+$magnolia: #f8f8ff;
+$alabaster: #fefeff;
+$white: #ffffff;
+
+$BG: #eff5ff;
+$BorderColor: #d6d9e6;
+$Denim: #022959;
+$Grey: #9699aa;
+$LightBlue: #abbcff;
+$LightGrey: #d6d9e6;
+$Orange: #ffaf7e;
+$Pink: #f9818e;
+$Purple: #483eff;
+$RedErrors: #ee374a;
+$SkyBlue: #bee2fd;
+$VeryLightGrey: #f8f9ff;
+$White: #ffffff;
+
+$font-size-heading: 32px;
+$font-size-body-l: 16px;
+$font-size-body-m: 14px;
+$font-size-body-s: 12px;
+
+.backgroundContainer {
+  height: 100vh;
+  background-color: $BG;
+  .formRow {
+    border-radius: 15px;
+    width: 940px;
+    height: 600px;
+    @media (max-width: 425px) {
+      border-radius: none !important;
+      padding: 0 !important;
+      height: 100%;
+      top: 0px;
+    }
+
+    .mainImage {
+      background-image: url("../public/images/Oval.png");
+      background-repeat: no-repeat;
+
+      @media (max-width: 425px) {
+        width: 100% !important;
+        background-size: cover;
+        background-position: center 90%;
+        background-repeat: no-repeat;
+        height: 172px;
+        .stepInfo {
+          display: none;
+        }
+      }
+      .stepsContainer {
+        @media (max-width: 425px) {
+          width: 75%;
+          margin: auto;
+          text-align: center;
+        }
+        .circleDiv {
+          width: 33px;
+          height: 33px;
+          border-radius: 50%;
+          border: 2px solid white;
+          color: white;
+          padding-top: 2px;
+          text-align: center;
+
+          &.activeStep {
+            background-color: $light-blue;
+            border: 2px solid $light-blue;
+            color: black;
+            @media (max-width: 425px) {
+              font-weight: 600;
+            }
+          }
+        }
+        .stepNumberparagraph {
+          color: $LightGrey;
+        }
+      }
+    }
+
+    .childrenContent {
+      position: relative;
+      @media (max-width: 425px) {
+        position: absolute;
+        top: 172px;
+        background-color: $light-blue;
+        height: fit-content;
+        padding-bottom: 50px;
+        padding-top: 0px;
+      }
+      .innerContent {
+        @media (max-width: 425px) {
+          padding-top: 30px;
+          background-color: $white;
+          padding-left: 20px;
+          padding-right: 20px;
+          border-radius: 15px;
+          margin-top: -50px;
+        }
+        .header {
+          font-weight: bold;
+          font-size: $font-size-heading;
+          color: $Denim;
+        }
+
+        .subheader {
+          font-size: $font-size-body-l;
+          color: $Grey;
+        }
+      }
+    }
+  }
+}
+
+.nextButton {
+  background-color: $marine-blue;
+  width: 123px;
+  height: 48px;
+  border: none;
+  outline: none;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 20px;
+  right: 48px;
+  @media (max-width: 425px) {
+    bottom: -70px;
+    right: 16px;
+  }
+}
+
+.basicInfoInput::placeholder {
+  color: $Grey;
+}
+
+.required {
+  color: $RedErrors;
+  font-size: $font-size-body-m;
+}
+
+/* select your plan */
+
+.planOption {
+  height: 183px;
+  border: 2px solid $LightGrey;
+  border-radius: 15px;
+  &:hover {
+    cursor: pointer;
+  }
+  &.activePlanOption {
+    background-color: $VeryLightGrey;
+    border: 2px solid $purplish-blue;
+  }
+  img {
+    height: 40px;
+    width: 40px;
+    top: 10px;
+    left: 10px;
+    position: relative;
+    @media (max-width: 425px) {
+      top: 0;
+    }
+  }
+  p {
+    font-size: $font-size-body-l;
+    color: $Denim;
+    margin-top: 50px;
+    margin-left: 10px;
+    @media (max-width: 425px) {
+      margin: 0;
+    }
+  }
+  span:first-of-type {
+    color: $cool-gray;
+  }
+  span {
+    margin-left: 10px;
+    font-size: $font-size-body-m;
+    @media (max-width: 425px) {
+      margin: 0;
+    }
+  }
+  span .free {
+    color: $Denim;
+  }
+}
+.toggleContainer {
+  background-color: $VeryLightGrey;
+  text-align: center;
+  margin-top: 25px;
+  padding: 10px 0;
+  .toggler {
+    color: $Grey;
+
+    &.activePlan {
+      color: $Denim;
+    }
+  }
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      &:focus + .slider {
+        box-shadow: 0 0 1px #2196f3;
+      }
+      &:checked + .slider::before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+      }
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+      background-color: $Denim;
+      border-radius: 34px;
+
+      &::before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.backButton {
+  position: absolute;
+  bottom: 20px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: $font-size-body-l;
+  color: $cool-gray;
+  @media (max-width: 425px) {
+    bottom: -70px;
+    left: 32px;
+  }
+}
+
+/* addOns */
+
+.addOns {
+  border: 2px solid $BorderColor;
+  border-radius: 15px;
+  padding: 8px 0;
+
+  &.activeAddons {
+    background-color: $VeryLightGrey;
+    border: 2px solid $purplish-blue;
+  }
+  input {
+    height: 20px;
+    width: 20px;
+  }
+  div {
+    p {
+      color: $Denim;
+      font-weight: 500;
+    }
+    .addOnsDescription {
+      color: $cool-gray;
+      @media (max-width: 425px) {
+        font-size: $font-size-body-s;
+      }
+    }
+  }
+  span {
+    color: $purplish-blue;
+  }
+}
+
+/* summary */
+
+.summary {
+  background-color: $VeryLightGrey;
+  div p:nth-child(2) {
+    color: $Denim;
+    font-weight: 500;
+  }
+  hr {
+    height: 3px;
+    border: none;
+    background-color: $cool-gray;
+  }
+  .link {
+    color: $Grey;
+  }
+  .addOnsParagraph {
+    color: $Grey;
+    span {
+      color: $Denim;
+    }
+  }
+}
+.total {
+  color: $Grey;
+  position: relative;
+  span {
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: $purplish-blue;
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+#confirm {
+  background-color: $purplish-blue;
+}
+
+/* submited  */
+#OKimage {
+  width: 80px;
+  height: 80px;
+  padding: 0;
+  margin-bottom: 40px;
+}
